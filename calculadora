@@ -1,0 +1,24 @@
+resul=1
+read num1
+read signo
+read num2
+echo "="
+case $signo in 
+	+) expr $num1 + $num2;;
+	-) expr $num1 - $num2;; 
+	\*) expr $num1 \* $num2;;
+	\/) expr $num1 \/ $num2;;
+	g) if (($num1 > $num2))
+		then echo $num1
+		else echo $num2
+		fi;;
+	l) if (($num1 < $num2))
+		then echo $num1
+		else echo $num2
+		fi;;
+	p) for ((i=1; i<=num2 ; i++))
+		do
+		resul=`expr $resul \* $num1`
+		done
+		echo $resul;;
+	esac
